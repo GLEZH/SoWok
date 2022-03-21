@@ -1,0 +1,43 @@
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
+DirectoryIndex page25330551.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^workwithdatapolicy$ page23210106.html [NC]
+RewriteRule ^workwithdatapolicy/$ page23210106.html [NC]
+
+RewriteRule ^wait$ page23119904.html [NC]
+RewriteRule ^wait/$ page23119904.html [NC]
+
+RewriteRule ^privatpolicy$ page23210506.html [NC]
+RewriteRule ^privatpolicy/$ page23210506.html [NC]
+
+RewriteRule ^demopage$ page25136495.html [NC]
+RewriteRule ^demopage/$ page25136495.html [NC]
+
+RewriteRule ^sorry$ page25330551.html [NC]
+RewriteRule ^sorry/$ page25330551.html [NC]
+
+RewriteRule ^moneypolicy$ page26071377.html [NC]
+RewriteRule ^moneypolicy/$ page26071377.html [NC]
+
+RewriteRule ^deliveryinfo$ page26071601.html [NC]
+RewriteRule ^deliveryinfo/$ page26071601.html [NC]
+
+RewriteRule ^members/ ma_start.html [NC]
+
+RewriteRule ^favicon.ico$ https://static.tildacdn.com/tild6435-3734-4631-b530-353664623066/favicon.ico [R=302,L]
+
+<IfModule mod_headers.c>
+	Header set X-Content-Type-Options nosniff
+	Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
